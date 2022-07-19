@@ -1,6 +1,6 @@
 ﻿namespace CakeCompany.Models;
 
-internal class Product
+public class Product
 {
     public Guid Id { get; set; }
     public Cake Cake { get; set; }

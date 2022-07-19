@@ -2,7 +2,7 @@
 
 namespace CakeCompany.Provider;
 
-internal class PaymentProvider
+public class PaymentProvider : IPaymentProvider
 {
     public PaymentIn Process(Order order)
     {

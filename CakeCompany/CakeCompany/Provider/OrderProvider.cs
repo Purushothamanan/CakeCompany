@@ -2,8 +2,7 @@
 using CakeCompany.Models;
 
 namespace CakeCompany.Provider;
-
-internal class OrderProvider
+public class OrderProvider : IOrderProvider
 {
     public Order[] GetLatestOrders()
     {

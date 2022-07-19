@@ -2,7 +2,7 @@
 
 namespace CakeCompany.Provider;
 
-internal class CakeProvider
+internal class CakeProvider:ICakeProvider
 {
     public DateTime Check(Order order)
     {

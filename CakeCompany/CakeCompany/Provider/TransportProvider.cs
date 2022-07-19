@@ -2,7 +2,7 @@
 
 namespace CakeCompany.Provider;
 
-internal class TransportProvider
+internal class TransportProvider : ITransportProvider
 {
     public string CheckForAvailability(List<Product> products)
     {
