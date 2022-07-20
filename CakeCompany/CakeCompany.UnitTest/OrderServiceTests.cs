@@ -43,7 +43,7 @@ namespace CakeCompany.UnitTest
                  }
             );           
 
-            _cakeMock.Setup(s => s.Check(order[0])).Returns(DateTime.Now.Add(TimeSpan.FromMinutes(60)));
+            _cakeMock.Setup(s => s.Check(order[0])).Returns(DateTime.Now.Add(TimeSpan.FromMinutes(-60)));
 
             _cakeMock.Setup(s => s.Bake(order[0])).Returns(
                 new Product()
@@ -61,13 +61,13 @@ namespace CakeCompany.UnitTest
                         IsSuccessful = true
                     }
                     );
-                // Act
+            // Act + Assert
             _shipmentProvider.GetShipment();
         }
 
         [Test]
         public void ValidateOrdersTest_TrueFlag()
-        {
+        {            
             bool flag;
             //Arrange
             var order = new List<Order>();
@@ -96,6 +96,7 @@ namespace CakeCompany.UnitTest
 
             // Assert
             Assert.IsTrue(flag);
+            
         }
 
         [Test]

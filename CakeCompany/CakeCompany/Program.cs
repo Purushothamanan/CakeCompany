@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 using CakeCompany.Models.Transport;
 
+// Using looger in the sevice provider collection to log information on console
 var serviceProvider = new ServiceCollection()
                             .AddLogging(builder => {
                                 builder.ClearProviders();
@@ -13,6 +14,7 @@ var serviceProvider = new ServiceCollection()
                                 builder.SetMinimumLevel(LogLevel.Information);
 
                             })
+                            //Dependency Injecton help to create loosely coupled design
                             .AddSingleton<ITransport, Ship>()
                             .AddSingleton<ITransport, Truck>()
                             .AddSingleton<ITransport, Van>()
@@ -29,7 +31,8 @@ var cake = serviceProvider.GetService<ICakeProvider>();
 var payment = serviceProvider.GetService<IPaymentProvider>();
 var Transport = serviceProvider.GetService<ITransport>();
 Console.WriteLine("Shipment Details...");
-var shipmentProvider = new ShipmentProvider(logger,Trans,order,cake,payment,Transport);
 
+//Passed service provider object to controller contructor
+var shipmentProvider = new ShipmentProvider(logger,Trans,order,cake,payment,Transport);
 shipmentProvider.GetShipment();
 

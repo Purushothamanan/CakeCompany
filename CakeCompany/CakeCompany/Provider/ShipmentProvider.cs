@@ -73,6 +73,7 @@ public class ShipmentProvider
         catch (Exception ex)
         {
             _logger.LogError("GetShipment Error" + ex .Message.ToString());
+            //throw ;
         }
     }
 
