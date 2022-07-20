@@ -1,6 +1,6 @@
 ﻿namespace CakeCompany.Models.Transport;
 
-internal class Van
+internal class Van : ITransport
 {
     public bool Deliver(List<Product> products)
     {

@@ -2,7 +2,7 @@
 
 namespace CakeCompany.Provider;
 
-internal class CakeProvider:ICakeProvider
+public class CakeProvider:ICakeProvider
 {
     public DateTime Check(Order order)
     {
@@ -13,7 +13,7 @@ internal class CakeProvider:ICakeProvider
 
         if (order.Name == Cake.RedVelvet)
         {
-            return DateTime.Now.Add(TimeSpan.FromMinutes(60));
+            return DateTime.Now.Add(TimeSpan.FromMinutes(-10));
         }
 
         return DateTime.Now.Add(TimeSpan.FromHours(15));
